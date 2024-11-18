@@ -1,10 +1,20 @@
 function waitForData() {
-    if (blockButtonEOM2 === 1){
-        backWardBtn.classList.add('gray_dis');
-        backWardBtn.disabled = true;
-        nextBtn.classList.add('gray_dis');
-        nextBtn.disabled = true;
+    function checkBtnStatus(){
+        var testData = data[`index_${currentPageIndex}`];
+        var attempts = parseInt(localStorage.getItem(`attempts_${currentPageIndex}`));
+        if(blockButtonEOM2 == 1 && attempts !== 0 && testData.hasOwnProperty('test')){
+            backWardBtn.classList.add('gray_dis');
+            backWardBtn.disabled = true;
+            nextBtn.classList.add('gray_dis');
+            nextBtn.disabled = true;
+        } else {
+            backWardBtn.classList.remove('gray_dis');
+            backWardBtn.disabled = false;
+            nextBtn.classList.remove('gray_dis');
+            nextBtn.disabled = false;
+        }
     }
+    checkBtnStatus();
     if (window.dataLoaded) {
         // Функция для создания теста
         function createTest(index) {

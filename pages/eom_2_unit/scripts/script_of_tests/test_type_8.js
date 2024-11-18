@@ -11,6 +11,22 @@ if (attempts == 0){
 } else {
     document.querySelector('#control_button_2').style.display = `inline-block`;
 };
+function checkBtnStatus(){
+    var testData = data[`index_${currentPageIndex}`];
+    var attempts = parseInt(localStorage.getItem(`attempts_${currentPageIndex}`));
+    if(blockButtonEOM2 == 1 && attempts !== 0 && testData.hasOwnProperty('test')){
+        backWardBtn.classList.add('gray_dis');
+        backWardBtn.disabled = true;
+        nextBtn.classList.add('gray_dis');
+        nextBtn.disabled = true;
+    } else {
+        backWardBtn.classList.remove('gray_dis');
+        backWardBtn.disabled = false;
+        nextBtn.classList.remove('gray_dis');
+        nextBtn.disabled = false;
+    }
+}
+checkBtnStatus();
 if (!planeText) {
     function createTest(index){
         if (blockButtonEOM2 === 1 && attempts != 0){

@@ -71,3 +71,10 @@ var content = [
 ];
 // Вызов функции для создания контейнеров с контентом
 createResultContainers(containerIds, content);
+
+setTimeout(()=>{
+    backWardBtn.classList.add('gray_dis');
+    backWardBtn.disabled = true;
+    nextBtn.classList.add('gray_dis');
+    nextBtn.disabled = true;
+},10)

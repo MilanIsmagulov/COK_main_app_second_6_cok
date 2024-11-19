@@ -93,12 +93,12 @@ function waitForData(){
                         if (item.image_path.includes(".mp4")){
                             checkTypeContent = ``;
                         } else {
-                            checkTypeContent = ` (для увеличения изображения дважды кликните на него)`;
+                            checkTypeContent = ` <i style='font-weight: normal;'>(для увеличения изображения дважды кликните на него)</i>`;
                         }
                         imgElement.src = item.image_path;
                         imgElement.alt = 'image';
                         const caption = document.createElement('p');
-                        caption.textContent = item.img_sign + checkTypeContent || 'Текст подпись к рисунку (Проверьте данные в data.js)';
+                        caption.innerHTML = item.img_sign + checkTypeContent || 'Текст подпись к рисунку (Проверьте данные в data.js)';
                         imgContainer.appendChild(imgElement);
                         imgContainer.appendChild(caption);
                         container.appendChild(imgContainer);
@@ -138,12 +138,12 @@ function waitForData(){
                         if (item.image_path.includes(".mp4")){
                             checkTypeContent = ``;
                         } else {
-                            checkTypeContent = ` (для увеличения изображения дважды кликните на него)`;
+                            checkTypeContent = ` <i style='font-weight: normal;'>(для увеличения изображения дважды кликните на него)</i>`;
                         }
                         imgElement.src = item.image_path;
                         imgElement.alt = 'image';
                         const caption = document.createElement('p');
-                        caption.textContent = item.img_sign + checkTypeContent || 'Текст подпись к рисунку (Проверьте данные в data.js)';
+                        caption.innerHTML = item.img_sign + checkTypeContent || 'Текст подпись к рисунку (Проверьте данные в data.js)';
                         container.appendChild(imgElement);
                         container.appendChild(caption);
                     };

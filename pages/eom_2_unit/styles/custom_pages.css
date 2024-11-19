@@ -1,4 +1,7 @@
 /* ВАЖНО - В данном файле все классы должны быть с припиской _custom */
+#dynamic-content > div.image_test_type_2{
+    order: -1;
+}
 
 .line_block_custom{
     border-top: 1px solid red;

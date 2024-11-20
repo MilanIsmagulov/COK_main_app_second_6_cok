@@ -59,6 +59,7 @@ body{
     top: 0;
     left: 0;
     transition: all 0.3s;
+    overflow-y: scroll !important;
 }
 .popup_main {
     display: flex;
